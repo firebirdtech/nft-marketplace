@@ -2,8 +2,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Home from './screens/Home';
 import Details from './screens/Details';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import { Font, AppLoading } from "expo";
 
 const Stack = createStackNavigator();
 
@@ -15,16 +17,18 @@ const theme = {
   }
 }
 
+
 const App = () => {
   const loaded = useFonts({
-    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
-    InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
-    InterMedium: require("./assets/fonts/Inter-Medium.ttf"),
-    InterRegular: require("./assets/fonts/Inter-Regular.ttf"),
-    InterLight: require("./assets/fonts/Inter-Light.ttf")
+    "InterBold": require("./assets/fonts/Inter-Bold.ttf"),
+    "InterSemiBold": require("./assets/fonts/Inter-SemiBold.ttf"),
+    "InterMedium": require("./assets/fonts/Inter-Medium.ttf"),
+    "InterRegular": require("./assets/fonts/Inter-Regular.ttf"),
+    "InterLight": require("./assets/fonts/Inter-Light.ttf")
   })
 
   if (!loaded) return null;
+
 
   return (
     <NavigationContainer theme={theme}>
