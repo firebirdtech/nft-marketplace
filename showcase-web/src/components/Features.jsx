@@ -2,8 +2,16 @@ import React from 'react'
 import assets from '../assets'
 import styles from '../styles/Global'
 
-const FeatureCard = ({ iconUrl, iconText}) => (
-  <div>{iconText}</div>
+const FeatureCard = ({ iconUrl, iconText }) => (
+  <div className={styles.featureCard}>
+    <img src={iconUrl}
+      alt="icon"
+      className={styles.featureImg}
+    />
+    <p className={styles.featureText}>
+      {iconText}
+    </p>
+  </div>
 )
 
 const Features = () => {
@@ -22,9 +30,9 @@ const Features = () => {
         </div>
         <div className={styles.flexWrap}>
           <FeatureCard iconUrl={assets.react}
-          iconText="React Native"/>
-          <FeatureCard iconUrl={assets.react}
-          iconText="Javascript"/>
+            iconText="React Native" />
+          <FeatureCard iconUrl={assets.javascript}
+            iconText="Javascript" />
         </div>
       </div>
     </div>
